@@ -4,6 +4,7 @@
  */
 package penjualan;
 import java.sql.*;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 /**
  *
@@ -48,12 +49,13 @@ public class Barang extends javax.swing.JFrame {
         txtStokMin = new javax.swing.JTextField();
         txtSimpan = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tabelData = new javax.swing.JTable();
         tblUpdate = new javax.swing.JButton();
         tblDelete = new javax.swing.JButton();
         tblClear = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tabelData = new javax.swing.JTable();
+        jLabel6 = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -92,26 +94,6 @@ public class Barang extends javax.swing.JFrame {
             }
         });
 
-        tabelData.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        tabelData.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tabelDataMouseClicked(evt);
-            }
-        });
-        jScrollPane2.setViewportView(tabelData);
-
-        jScrollPane3.setViewportView(jScrollPane2);
-
         tblUpdate.setText("Update");
         tblUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,44 +122,76 @@ public class Barang extends javax.swing.JFrame {
             }
         });
 
+        tabelData.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tabelData.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelDataMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tabelData);
+
+        jLabel6.setFont(new java.awt.Font("Nirmala UI", 1, 36)); // NOI18N
+        jLabel6.setText("Data Barang Toko Sembako Madura");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(txtSimpan))
+                            .addComponent(jLabel5))
                         .addGap(42, 42, 42)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(tblUpdate)
-                                .addGap(40, 40, 40)
-                                .addComponent(tblDelete)
-                                .addGap(34, 34, 34)
-                                .addComponent(tblClear)
-                                .addGap(26, 26, 26)
-                                .addComponent(jButton1))
                             .addComponent(txtKode, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtNama, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(txtStokMin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
                                 .addComponent(txtStok, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtSatuan, javax.swing.GroupLayout.Alignment.LEADING)))))
-                .addContainerGap(52, Short.MAX_VALUE))
+                                .addComponent(txtSatuan, javax.swing.GroupLayout.Alignment.LEADING))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(106, 106, 106)
+                        .addComponent(jLabel6))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(67, 67, 67)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane2)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 608, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(113, 113, 113)
+                        .addComponent(txtSimpan)
+                        .addGap(47, 47, 47)
+                        .addComponent(tblUpdate)
+                        .addGap(40, 40, 40)
+                        .addComponent(tblDelete)
+                        .addGap(34, 34, 34)
+                        .addComponent(tblClear)
+                        .addGap(26, 26, 26)
+                        .addComponent(jButton1)))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel6)
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtKode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -205,8 +219,10 @@ public class Barang extends javax.swing.JFrame {
                     .addComponent(tblClear)
                     .addComponent(jButton1))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
-                .addGap(44, 44, 44))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 16, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65))
         );
 
         pack();
@@ -219,7 +235,17 @@ public class Barang extends javax.swing.JFrame {
         String satuan = txtSatuan.getText();
         int stok = Integer.parseInt(txtStok.getText());
         int stok_min = Integer.parseInt(txtStokMin.getText());
-        insert(kode,nama,satuan,stok,stok_min);
+        
+        int cek;
+        cek = cekKode(kode);
+        
+        if(cek > 0){
+            JOptionPane.showMessageDialog(this, "Kode " +kode+ " Ini Sudah Ada");
+        } else{
+            insert(kode,nama,satuan,stok,stok_min);
+            JOptionPane.showMessageDialog(null, "Data " +kode+ " Berhasil Masuk");
+        }
+        
         showtable();
         clear();
         
@@ -285,6 +311,24 @@ public class Barang extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    public Integer cekKode(String kode){
+        int cek = 0;
+
+        try{
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            stmt = conn.createStatement();
+             String sql = "SELECT count(*) FROM barang WHERE kodebrg = '"+kode+"'";
+            rs = stmt.executeQuery(sql);
+            
+            if(rs.next());
+                cek = rs.getInt(1);
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return cek;
+    }
+    
     public void getData(){
         int baris = tabelData.getSelectedRow();
         txtKode.setText(String.valueOf(tabelData.getValueAt(baris,1)));
@@ -406,6 +450,7 @@ public class Barang extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

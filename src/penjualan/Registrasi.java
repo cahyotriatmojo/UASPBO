@@ -17,7 +17,7 @@ import static penjualan.Barang.stmt;
 
 /**
  *
- * @author user
+ * @author cahyotriatmojo
  */
 public class Registrasi extends javax.swing.JFrame {
 
@@ -54,6 +54,7 @@ public class Registrasi extends javax.swing.JFrame {
         btnBack = new javax.swing.JButton();
         txtpass = new javax.swing.JPasswordField();
         txtUlangpass = new javax.swing.JPasswordField();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -78,6 +79,9 @@ public class Registrasi extends javax.swing.JFrame {
                 btnBackActionPerformed(evt);
             }
         });
+
+        jLabel5.setFont(new java.awt.Font("Nirmala UI", 1, 36)); // NOI18N
+        jLabel5.setText("REGISTRASI");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -104,16 +108,22 @@ public class Registrasi extends javax.swing.JFrame {
                                     .addComponent(txtUlangpass, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtpass, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(124, 124, 124)
+                        .addGap(130, 130, 130)
                         .addComponent(btnSubmit)
-                        .addGap(47, 47, 47)
+                        .addGap(49, 49, 49)
                         .addComponent(btnBack)))
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addContainerGap(77, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addGap(97, 97, 97))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(56, 56, 56)
+                .addContainerGap()
+                .addComponent(jLabel5)
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtnmLengkap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -132,11 +142,11 @@ public class Registrasi extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtUlangpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addGap(32, 32, 32)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSubmit)
-                    .addComponent(btnBack))
-                .addContainerGap(47, Short.MAX_VALUE))
+                    .addComponent(btnBack)
+                    .addComponent(btnSubmit))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
@@ -231,6 +241,7 @@ public class Registrasi extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPasswordField txtUlangpass;
     private javax.swing.JTextField txtUsername;
     private javax.swing.JTextField txtnmLengkap;

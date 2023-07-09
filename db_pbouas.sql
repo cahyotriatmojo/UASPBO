@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 04 Jul 2023 pada 14.56
--- Versi server: 10.4.27-MariaDB
--- Versi PHP: 8.1.12
+-- Waktu pembuatan: 09 Jul 2023 pada 08.19
+-- Versi server: 10.4.28-MariaDB
+-- Versi PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -40,7 +40,8 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`kodebrg`, `namabrg`, `satuanbrg`, `stokbrg`, `minbrg`) VALUES
-('b01', 'bayem', 'kilo', 10, 4);
+('b01', 'bayem', 'kilo', 10, 4),
+('p12', 'dsd', 'dsad', 34, 43);
 
 -- --------------------------------------------------------
 
@@ -50,6 +51,7 @@ INSERT INTO `barang` (`kodebrg`, `namabrg`, `satuanbrg`, `stokbrg`, `minbrg`) VA
 
 CREATE TABLE `tb_user` (
   `username` varchar(225) NOT NULL,
+  `namalengkap` varchar(225) NOT NULL,
   `password` varchar(35) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -57,10 +59,38 @@ CREATE TABLE `tb_user` (
 -- Dumping data untuk tabel `tb_user`
 --
 
-INSERT INTO `tb_user` (`username`, `password`) VALUES
-('cahyo', '12345678'),
-('cahyo', '7761248b458549aeceaf1a911533b08e'),
-('cahyo', '827ccb0eea8a706c4c34a16891f84e7b');
+INSERT INTO `tb_user` (`username`, `namalengkap`, `password`) VALUES
+('cahyo', '', '12345678'),
+('cahyo', '', '7761248b458549aeceaf1a911533b08e'),
+('cahyo', '', '827ccb0eea8a706c4c34a16891f84e7b'),
+('cahyoTri', 'tri', '12345'),
+('atm', 'cahyoatm', '12345'),
+('', '', ''),
+('', '', ''),
+('coba', 'user', '12345');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `user`
+--
+
+CREATE TABLE `user` (
+  `id_user` varchar(11) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `nama` varchar(30) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `jabatan` varchar(30) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `alamat` varchar(30) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `umur` int(11) NOT NULL,
+  `jenis_kelamin` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `user`
+--
+
+INSERT INTO `user` (`id_user`, `nama`, `jabatan`, `alamat`, `umur`, `jenis_kelamin`) VALUES
+('p002', 'Dian', 'kasir', 'candi', 34, 'Perempuan'),
+('p01', 'Tia Kurnia', 'Manager', 'Tembalang', 30, 'Perempuan');
 
 --
 -- Indexes for dumped tables
@@ -71,6 +101,12 @@ INSERT INTO `tb_user` (`username`, `password`) VALUES
 --
 ALTER TABLE `barang`
   ADD PRIMARY KEY (`kodebrg`);
+
+--
+-- Indeks untuk tabel `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id_user`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
