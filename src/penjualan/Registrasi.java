@@ -5,21 +5,33 @@
 package penjualan;
 
 import java.awt.HeadlessException;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
+//import java.sql.Connection;
+//import java.sql.DriverManager;
+//import java.sql.PreparedStatement;
+//import java.sql.ResultSet;
+//import java.sql.Statement;
+import java.sql.*;
 import javax.swing.JOptionPane;
-import static penjualan.Barang.DB_URL;
-import static penjualan.Barang.JDBC_DRIVER;
-import static penjualan.Barang.PASS;
-import static penjualan.Barang.USER;
-import static penjualan.Barang.conn;
-import static penjualan.Barang.stmt;
+//import static penjualan.Barang.DB_URL;
+//import static penjualan.Barang.JDBC_DRIVER;
+//import static penjualan.Barang.PASS;
+//import static penjualan.Barang.USER;
+//import static penjualan.Barang.conn;
+//import static penjualan.Barang.stmt;
 
 /**
  *
  * @author cahyotriatmojo
  */
 public class Registrasi extends javax.swing.JFrame {
+     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
+    static final String DB_URL = "jdbc:mysql://localhost:3306/db_pbouas";
+    static final String USER = "root";
+    static final String PASS = "";
+    
+    static Connection conn;
+    static Statement stmt;
+    static ResultSet rs;
 
     /**
      * Creates new form Registrasi

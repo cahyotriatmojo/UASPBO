@@ -47,7 +47,7 @@ public class Barang extends javax.swing.JFrame {
         txtStok = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         txtStokMin = new javax.swing.JTextField();
-        txtSimpan = new javax.swing.JButton();
+        btnSimpan = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         tblUpdate = new javax.swing.JButton();
         tblDelete = new javax.swing.JButton();
@@ -87,10 +87,10 @@ public class Barang extends javax.swing.JFrame {
 
         jLabel5.setText("Stok Minimal");
 
-        txtSimpan.setText("Simpan");
-        txtSimpan.addActionListener(new java.awt.event.ActionListener() {
+        btnSimpan.setText("Simpan");
+        btnSimpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSimpanActionPerformed(evt);
+                btnSimpanActionPerformed(evt);
             }
         });
 
@@ -175,7 +175,7 @@ public class Barang extends javax.swing.JFrame {
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 608, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(113, 113, 113)
-                        .addComponent(txtSimpan)
+                        .addComponent(btnSimpan)
                         .addGap(47, 47, 47)
                         .addComponent(tblUpdate)
                         .addGap(40, 40, 40)
@@ -213,7 +213,7 @@ public class Barang extends javax.swing.JFrame {
                     .addComponent(txtStokMin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtSimpan)
+                    .addComponent(btnSimpan)
                     .addComponent(tblUpdate)
                     .addComponent(tblDelete)
                     .addComponent(tblClear)
@@ -228,7 +228,7 @@ public class Barang extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSimpanActionPerformed
+    private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
         // TODO add your handling code here:
         String kode = txtKode.getText().toString().trim();
         String nama = txtNama.getText();
@@ -249,7 +249,7 @@ public class Barang extends javax.swing.JFrame {
         showtable();
         clear();
         
-    }//GEN-LAST:event_txtSimpanActionPerformed
+    }//GEN-LAST:event_btnSimpanActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
@@ -317,7 +317,7 @@ public class Barang extends javax.swing.JFrame {
         try{
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             stmt = conn.createStatement();
-             String sql = "SELECT count(*) FROM barang WHERE kodebrg = '"+kode+"'";
+            String sql = "SELECT count(*) FROM barang WHERE kodebrg = '"+kode+"'";
             rs = stmt.executeQuery(sql);
             
             if(rs.next());
@@ -444,6 +444,7 @@ public class Barang extends javax.swing.JFrame {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnSimpan;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -462,7 +463,6 @@ public class Barang extends javax.swing.JFrame {
     private javax.swing.JTextField txtKode;
     private javax.swing.JTextField txtNama;
     private javax.swing.JTextField txtSatuan;
-    private javax.swing.JButton txtSimpan;
     private javax.swing.JTextField txtStok;
     private javax.swing.JTextField txtStokMin;
     // End of variables declaration//GEN-END:variables
